@@ -12,4 +12,18 @@ export class ProgressComponent implements OnInit {
   ngOnInit(): void {
   }
 
+ public  progreso1=70;
+
+ public  progreso2=35;
+
+ public  get getProgreso1()
+  {
+    return `${this.progreso1}%`;
+  }
+
+  public  get getProgreso2()
+  {
+    return `${this.progreso2}%`;
+  }
+ 
 }

@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class PagesComponent implements OnInit {
 
   constructor() { }
-
+   anoActual= new Date().getFullYear;
   ngOnInit(): void {
   }
 

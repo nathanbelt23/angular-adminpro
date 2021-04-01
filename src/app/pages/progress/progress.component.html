@@ -1,1 +1,41 @@
-<p>progress works!</p>
+<div class="row">
+    <div class="col-sm-6">
+        <div class="card">
+            <div class="card-body">
+                <div class="card-title">Stripped progress bar</div>
+                <div class="progress m-t-20">
+                    <div class="progress-bar bg-info active progress-bar-striped" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" style="height: 15px" [style.width]="getProgreso1" role="progressbar">
+                        {{ progreso1 }}
+                        <span class="sr-only">85% Complete (success)</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-sm-6">
+        <div class="card">
+            <div class="card-body">
+                <div class="card-title">Stripped progress bar 2</div>
+                <div class="progress m-t-20">
+                    <div class="progress-bar bg-success active progress-bar-striped" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" style="height: 15px" [style.width]="getProgreso2" role="progressbar">
+                        {{ progreso2 }}
+                        <span class="sr-only">85% Complete (success)</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-sm-6">
+
+        <app-incrementador [valorInicial]="progreso1" (valorSalida)="progreso1=$event"></app-incrementador>
+    </div>
+
+    <div class="col-sm-6">
+        <app-incrementador [valorInicial]="progreso2" (valorSalida)="progreso2=$event"></app-incrementador>
+
+    </div>
+</div>
