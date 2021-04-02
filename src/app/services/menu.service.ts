@@ -16,11 +16,18 @@ export class MenuService {
         {
           titulo: "Progress bar",
           url: 'progress'
+        }
+        ,
+        {
+          titulo:"Promesas",
+          url: 'promesas'
         },
         {
-          titulo: "Main",
-          url: '/'
-        },
+          titulo:"Rxjs",
+          url: 'rxjs'
+        }
+       
+       
       ]},
 
       {
@@ -32,7 +39,8 @@ export class MenuService {
             url: 'ajustes'
           },
         ]
-   }
+   },
+   
   ];
   constructor() { }
   public getMenu() {

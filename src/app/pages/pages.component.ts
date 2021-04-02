@@ -2,8 +2,8 @@ import {  OnInit } from '@angular/core';
 import { ThemeService } from '../services/theme.service';
 import {Component} from '@angular/core';
 
- 
 declare var customInitFunctions: Function;
+
 
 @Component({
   selector: 'app-pages',
@@ -13,11 +13,10 @@ declare var customInitFunctions: Function;
 export class PagesComponent implements OnInit {
 
   constructor(public  themeService:ThemeService) { }
-  anoActual = new Date().getFullYear;
+  anoActual = Date.prototype.getFullYear;
+
   ngOnInit(): void {
     this.themeService.ThemeDefecto();
-    //customInitFunctions();
-   // document.
    try {
     customInitFunctions();
    } catch (error) {

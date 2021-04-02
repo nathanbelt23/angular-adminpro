@@ -8,14 +8,11 @@ import { MenuService } from '../../services/menu.service';
 })
 export class SidebarComponent implements OnInit {
 
- public  menu:any= [];
+  public menu: any = [];
 
-  constructor(public menuService: MenuService ) { 
-    this.menu= this.menuService.getMenu();
-    console.log(this.menu);
-
+  constructor(public menuService: MenuService) {
+    this.menu = this.menuService.getMenu();
   }
-
   ngOnInit(): void {
   }
 
