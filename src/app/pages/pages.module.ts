@@ -10,9 +10,8 @@ import { PagesComponent } from './pages.component';
 import { ProgressComponent } from './progress/progress.component';
 import { SharedModule } from '../shared/shared.module';
 import { ComponentsModule } from '../components/components.module';
-/*
-import { ComponentsModule } from '../components/components.module';
-import { ChartsModule } from 'ng2-charts';*/
+import { AccountSettingsComponent } from './account-settings/account-settings.component';
+
 
 
  
@@ -21,7 +20,9 @@ import { ChartsModule } from 'ng2-charts';*/
     DashboardComponent,
     ProgressComponent,
     Grafica1Component,
-    PagesComponent, 
+    PagesComponent,
+    AccountSettingsComponent, 
+    AccountSettingsComponent
    
 
   ],
@@ -30,7 +31,8 @@ import { ChartsModule } from 'ng2-charts';*/
     ProgressComponent,
     Grafica1Component,
     PagesComponent,
-    RouterModule
+  
+    AccountSettingsComponent
   ],
   imports: [ 
     CommonModule,
