@@ -13,6 +13,8 @@ import { ComponentsModule } from '../components/components.module';
 import { AccountSettingsComponent } from './account-settings/account-settings.component';
 import { PromesasComponent } from './promesas/promesas.component';
 import { RxjsComponent } from './rxjs/rxjs.component';
+import { ToastrModule } from 'ngx-toastr';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 
@@ -42,7 +44,8 @@ import { RxjsComponent } from './rxjs/rxjs.component';
     FormsModule,
     ReactiveFormsModule,
     SharedModule,
-    ComponentsModule
+    ComponentsModule,
+    BrowserAnimationsModule
 
 
     ]

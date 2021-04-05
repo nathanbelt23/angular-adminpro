@@ -1,10 +1,13 @@
 import { NgModule } from '@angular/core';
 
-import { Routes, RouterModule } from '@angular/router';
+import {  RouterModule } from '@angular/router';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -13,12 +16,16 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
   imports: [
    RouterModule,
    FormsModule,
-   ReactiveFormsModule
+   ReactiveFormsModule,
+   CommonModule,
+   BrowserAnimationsModule,
+   
   ]
   , exports: [
     RouterModule,
     LoginComponent, 
     RegisterComponent
+
   ]
   
 })
