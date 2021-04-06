@@ -8,6 +8,8 @@ import { HeaderComponent } from './header/header.component';
 import { BreadcrumbsComponent } from './breadcrumbs/breadcrumbs.component';
 import { RouterModule } from '@angular/router';
 
+import { PipesModule } from '../pipes/pipes.module';
+
 
 
 @NgModule({
@@ -16,11 +18,13 @@ import { RouterModule } from '@angular/router';
     SidebarComponent,
     HeaderComponent,
     BreadcrumbsComponent,
+   
 
   ],
   imports: [
     CommonModule,
-    RouterModule
+    RouterModule,
+    PipesModule
   ],
   exports:[
     SidebarComponent,

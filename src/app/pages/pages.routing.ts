@@ -1,5 +1,5 @@
 import { Routes, RouterModule } from '@angular/router';
-import { NgModule } from '@angular/core';
+import { NgModule, Component } from '@angular/core';
 
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ProgressComponent } from './progress/progress.component';
@@ -8,6 +8,7 @@ import { PagesComponent } from './pages.component';
 import { AccountSettingsComponent } from './account-settings/account-settings.component';
 import { PromesasComponent } from './promesas/promesas.component';
 import { RxjsComponent } from './rxjs/rxjs.component';
+import { PerfilComponent } from './perfil/perfil.component';
 
 
 
@@ -20,6 +21,7 @@ const routes: Routes = [
       { path: '', component: DashboardComponent , data:{titulo:"dashboard"}},
       { path: 'ajustes', component: AccountSettingsComponent  , data:{titulo:"ajustes"}},
       { path: 'grafica1', component: Grafica1Component , data:{titulo:"grafica1"}},
+      { path: 'perfil',component:PerfilComponent, data:{titulo: "perfil"}},
       { path: 'progress', component: ProgressComponent , data:{titulo:"progress"}},
       { path: 'promesas', component: PromesasComponent, data:{titulo:"promesas"} },
       { path: 'rxjs', component: RxjsComponent , data:{titulo:"rxjs"} },

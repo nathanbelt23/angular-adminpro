@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  urlBase:'http://localhost:3000/api'
+  urlBase:'http://localhost:3000/api',
+  urlBaseImagenes:'http://localhost:3000/api'
 };
 
 /*

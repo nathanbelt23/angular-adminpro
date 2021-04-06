@@ -3,7 +3,7 @@ import { Router } from '@angular/router';
 import { UsuarioService } from '../../services/usuario.service';
 import { FormBuilder, Validators } from '@angular/forms';
 import Swal from 'sweetalert2';
-import { RespuestaUsuario } from '../../model/usuario.model';
+import { RespuestaUsuario, Usuario } from '../../model/usuario.model';
 import { Subscription } from 'rxjs';
 declare const gapi: any;
 @Component({
@@ -109,7 +109,10 @@ export class LoginComponent implements OnInit {
     {
 
       if (data.comparacion == true) {
-        this.usuarioService.usuario = data.usuario;
+      //  this.usuarioService.usuario = data.usuario||new  Usuario();
+
+      ///console.error(this.usuarioService.usuario);
+
         localStorage.setItem('token', data.token);
         if (this.getControlValue("recordar")) {
           localStorage.setItem('email', this.getControlValue("email"));

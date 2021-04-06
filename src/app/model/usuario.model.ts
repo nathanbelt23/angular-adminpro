@@ -15,11 +15,12 @@ export class RespuestaUsuario {
 export class Usuario {
 
     constructor(
-        public role: string,
-        public google: boolean,
-        public nombre: string,
-        public email: string,
-        public uid: string
+        public role: string="",
+        public google: boolean=false,
+        public nombre: string="",
+        public email: string="",
+        public uid: string="",
+        public img:string=""
     ) { }
 
 }

@@ -4,6 +4,8 @@ import { HttpClient } from '@angular/common/http';
 
 import { Usuario, RespuestaUsuario } from '../model/usuario.model';
 import { environment } from '../../environments/environment';
+import { tap } from 'rxjs/operators';
+
 const urlBase = environment.urlBase;
 @Injectable({
   providedIn: 'root'
@@ -11,8 +13,8 @@ const urlBase = environment.urlBase;
 export class UsuarioService {
   constructor(public httpClient: HttpClient) { }
 
-  public usuario?: Usuario;
-
+  public usuario = new Usuario("", false, "", "", "");
+  token: string = "";
   public crearUsuario(nombre: string, password: string, email: string) {
     let parametros = {
       nombre,
@@ -32,7 +34,12 @@ export class UsuarioService {
 
   public loginDatosForm(formData: FormData) {
 
-    return this.httpClient.post<RespuestaUsuario>(`${urlBase}/login`, formData);
+    return this.httpClient.post<RespuestaUsuario>(`${urlBase}/login`, formData).
+      pipe(tap(p => {
+        this.usuario = p.usuario || new Usuario();
+        localStorage.setItem("usuario", JSON.stringify(this.usuario));
+      }
+      ));
   }
 
   //login/google
@@ -40,8 +47,46 @@ export class UsuarioService {
     let parametros = {
       token
     };
-    return this.httpClient.post<RespuestaUsuario>(`${urlBase}/login/google`, parametros);
+    return this.httpClient.post<RespuestaUsuario>(`${urlBase}/login/google`, parametros)
+      .pipe(tap(p => {
+        this.usuario = p.usuario || new Usuario();
+        localStorage.setItem("usuario", JSON.stringify(this.usuario));
+      }
+      )
+      )
+
+      ;
   }
+
+  public actualizarUsuario(formData: FormData, id: string) {
+   
+    this.token = localStorage.getItem("token") || "";
+    let headersToken = {
+
+      "x-token": this.token
+    };
+
+    return this.httpClient.put<RespuestaUsuario>(`${urlBase}/usuarios/${id}`, formData, {
+      headers:headersToken
+     }
+    )
+      .pipe(tap(p => {
+        this.usuario = p.usuario || new Usuario();
+        localStorage.setItem("usuario", JSON.stringify(this.usuario));
+      }
+      )
+      )
+
+      ;
+  }
+
+
+  public getToken()
+  {
+    return localStorage.getItem("token") || "";
+  }
+
+  /*localhost:3000/api/usuarios/*/
 
 }
 

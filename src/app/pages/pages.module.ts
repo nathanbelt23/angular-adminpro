@@ -15,6 +15,9 @@ import { PromesasComponent } from './promesas/promesas.component';
 import { RxjsComponent } from './rxjs/rxjs.component';
 import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { PerfilComponent } from './perfil/perfil.component';
+import { ImagenPipe } from '../pipes/imagen.pipe';
+import { PipesModule } from '../pipes/pipes.module';
 
 
 
@@ -26,7 +29,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     Grafica1Component,
     PagesComponent,
     AccountSettingsComponent, 
-    AccountSettingsComponent, PromesasComponent, RxjsComponent
+    AccountSettingsComponent, PromesasComponent, RxjsComponent, PerfilComponent
    
 
   ],
@@ -45,7 +48,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     ReactiveFormsModule,
     SharedModule,
     ComponentsModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    PipesModule
 
 
     ]
