@@ -18,6 +18,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { PerfilComponent } from './perfil/perfil.component';
 import { ImagenPipe } from '../pipes/imagen.pipe';
 import { PipesModule } from '../pipes/pipes.module';
+import { UsuariosComponent } from './mantenimientos/usuarios/usuarios.component';
+import { HospitalesComponent } from './mantenimientos/hospitales/hospitales.component';
+import { MedicosComponent } from './mantenimientos/medicos/medicos.component';
 
 
 
@@ -29,7 +32,7 @@ import { PipesModule } from '../pipes/pipes.module';
     Grafica1Component,
     PagesComponent,
     AccountSettingsComponent, 
-    AccountSettingsComponent, PromesasComponent, RxjsComponent, PerfilComponent
+    AccountSettingsComponent, PromesasComponent, RxjsComponent, PerfilComponent, UsuariosComponent, HospitalesComponent, MedicosComponent
    
 
   ],

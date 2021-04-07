@@ -26,20 +26,41 @@ export class MenuService {
           titulo:"Rxjs",
           url: 'rxjs'
         }
-       
-       
-      ]},
-
+        
+        
+      ]}
+,
       {
-        titulo: "Otros",
-        icono: "mdi mdi-gauge",
+        titulo: "Mantenimientos",
+        icono: "mdi mdi-account",
         subMenu: [
           {
-            titulo: "Ajustes",
-            url: 'ajustes'
+            titulo: "Medicos",
+            url: 'medicos'
           },
+          {
+            titulo: "Hospitales",
+            url: 'hospitales'
+          }
+          ,
+          {
+            titulo: "Usuarios",
+            url: 'usuarios'
+          }
         ]
    },
+   {
+    titulo: "Otros",
+    icono: "mdi-engine",
+    subMenu: [
+      {
+        titulo: "Ajustes",
+        url: 'ajustes'
+      },
+    ]
+},
+
+
    
   ];
   constructor() { }

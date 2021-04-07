@@ -1,10 +1,10 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 
 
 import { Usuario, RespuestaUsuario } from '../model/usuario.model';
 import { environment } from '../../environments/environment';
-import { tap } from 'rxjs/operators';
+import { delay, tap } from 'rxjs/operators';
 
 const urlBase = environment.urlBase;
 @Injectable({
@@ -57,9 +57,20 @@ export class UsuarioService {
 
       ;
   }
+  public actualizarUsuarioClase(usuario: Usuario, id: string) {
+
+    this.token = localStorage.getItem("token") || "";
+    let headersToken = {
+    "x-token": this.token
+    };
+    return this.httpClient.put<RespuestaUsuario>(`${urlBase}/usuarios/${id}`, usuario, {
+      headers: headersToken } );
+  
+  }
+
 
   public actualizarUsuario(formData: FormData, id: string) {
-   
+
     this.token = localStorage.getItem("token") || "";
     let headersToken = {
 
@@ -67,8 +78,8 @@ export class UsuarioService {
     };
 
     return this.httpClient.put<RespuestaUsuario>(`${urlBase}/usuarios/${id}`, formData, {
-      headers:headersToken
-     }
+      headers: headersToken
+    }
     )
       .pipe(tap(p => {
         this.usuario = p.usuario || new Usuario();
@@ -79,14 +90,42 @@ export class UsuarioService {
 
       ;
   }
+  public listadoUsuarios(desde: number) {
+    const params = new HttpParams()
+      .set('desde', desde.toString())
 
+    const headersToken = {
 
-  public getToken()
-  {
+      "x-token": this.getToken()
+    };
+    const url: string = `${urlBase}/usuarios/${desde}`;
+    return this.httpClient.get<RespuestaUsuario>(url, { headers: headersToken }).pipe(delay(100));
+  }
+
+  public getToken() {
     return localStorage.getItem("token") || "";
   }
 
-  /*localhost:3000/api/usuarios/*/
+
+  public eliminarUsuario(id:string)
+  {
+    const url =`${urlBase}/usuarios/${id}`;
+    const headersParam= {
+        "x-token":this.getToken()
+
+    };
+
+   return this.httpClient.delete(url, {headers:headersParam});
+
+  }
+
+
+  public cambiarRole(usuario:Usuario)
+  {
+
+
+  }
+
 
 }
 

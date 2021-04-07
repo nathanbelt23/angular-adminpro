@@ -3,11 +3,14 @@ export class RespuestaUsuario {
     constructor(
         public ok: boolean,
         public msg: string,
-        public totalUsuarios?: number,
+        public totalUsuarios: number=0,
         public usuarios?: Usuario[],
         public usuario?:Usuario ,
         public comparacion?:boolean,
-        public token:string=""
+        public token:string="",
+       
+        
+
     ) { }
 
 }

@@ -24,7 +24,7 @@ export class SidebarComponent implements OnInit {
   
         let strUsuario: string = localStorage.getItem("usuario")?.toString() || '';
         this.usuarioService.usuario = JSON.parse(strUsuario);
-        ///this.usuario=  usuarioService.usuario;
+        
       }
     }
 

@@ -74,7 +74,7 @@ export class LoginComponent implements OnInit {
   onSuccess(googleUser: any) {
   }
   onFailure(error: any) {
-    console.log(error);
+  
   }
 
   startApp() {
@@ -109,9 +109,7 @@ export class LoginComponent implements OnInit {
     {
 
       if (data.comparacion == true) {
-      //  this.usuarioService.usuario = data.usuario||new  Usuario();
 
-      ///console.error(this.usuarioService.usuario);
 
         localStorage.setItem('token', data.token);
         if (this.getControlValue("recordar")) {
